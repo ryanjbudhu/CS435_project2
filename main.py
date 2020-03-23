@@ -26,21 +26,36 @@ def createLinkedList(n):
 	return g
 
 def BFTRecLinkedList(graph):
-	pass
+	gs = GraphSearch()
+	return gs.BFTRec(graph)
 
 def BFTIterLinkedList(graph):
-	pass
+	gs = GraphSearch()
+	return gs.BFTIter(graph)
 
-g = createRandomUnweightedGraphIter(20)
-#g = createLinkedList(1000)
-gs = GraphSearch()
-allNodes = g.getAllNodes()
-#path = gs.DFSRec(allNodes[0], allNodes[1])
-#path = gs.DFSIter(allNodes[0], allNodes[1])
-#path = gs.BFTRec(g)
-#path = gs.BFTIter(g)
-if path:
-	for p in path:
-		print(p.name)
-else:
-	print("No path")
+def printPath(path):
+	if path:
+		for p in path:
+			print(p.name)
+	else:
+		print("No path")
+	
+def test():
+	g = createRandomUnweightedGraphIter(20)
+#	g = createLinkedList(1000)
+	gs = GraphSearch()
+	allNodes = g.getAllNodes()
+	#path = gs.DFSRec(allNodes[0], allNodes[1])
+	#path = gs.DFSIter(allNodes[0], allNodes[1])
+	#path = gs.BFTRec(g)
+#	path = gs.BFTIter(g)
+#	printPath(path)
+
+def testLinkedList():
+	g = createLinkedList(1000)
+	try:
+		BFTRecLinkedList(g)
+	except RecursionError:
+		print("Recursion Error")
+	
+	BFTIterLinkedList(g)

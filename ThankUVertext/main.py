@@ -7,29 +7,32 @@ def createRandomDAGIter(n):
 	g = DirectedGraph()
 	for i in range(1,n+1):
 		g.addNode(createLabel(i))
-	nodes = g.getAllNodes()
-	weights = list(range(0,len(nodes),10))
-	order =[]
-	for i in nodes:
-		neighs = randrange(1, n//2)
-		x = nodes.index(i)
-#		suggested = choices(nodes[:x]+nodes[x+1:],weights=weights[:x]+weights[x+1:],k=neighs)
-		suggested = sample(nodes[:x]+nodes[x+1:],k=neighs)
-		for j in suggested:
-			if j == nodes[0]:
-				g.addDirectedEdge(i, choice(nodes[1:nodes.index(i)]+nodes[nodes.index(i)+1:]))
-				continue
-			g.addDirectedEdge(i, j)
-#	choice(nodes).neighbors = []
+	nodes = g.getAllNodes().copy()
+	total = len(nodes)
+	while len(nodes) > 0:
+		cur = nodes.pop(0)
+		if len(nodes)<=1:
+			break
+		num = randrange(1,len(nodes))
+		for i in sample(nodes,num): g.addDirectedEdge(cur, i)
+		for n in cur.neighbors:
+			nodes.pop(nodes.index(n))
+			if len(nodes) <= 1:
+				break
+			num = randrange(1,len(nodes))
+			for i in sample(nodes,num): g.addDirectedEdge(n, i)
 	return g
 
 
 def test():
-	g = createRandomDAGIter(5)
+	g = createRandomDAGIter(15)
 	ts = TopSort()
 	print([{i.name:[j.name for j in i.neighbors]} for i in g.getAllNodes()])
+	print()
 	kahnsPath = ts.Kahns(g)
-#	mDFSPath = ts.mDFS(g)
+	mDFSPath = ts.mDFS(g)
+	print()
 	print([i.name for i in kahnsPath])
-#	print([i.name for i in mDFSPath])
+	print()
+	print([i.name for i in mDFSPath])
 test()

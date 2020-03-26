@@ -11,10 +11,7 @@ class TopSort:
 		queue = []
 		queue = list(filter(lambda i: in_degree[i.name]==0, nodes))
 		output = []
-		print(in_degree)
 		while queue:
-			print([i.name for i in queue])
-			print(in_degree)
 			cur = queue.pop(0)
 			output.append(cur)
 			for i in cur.neighbors:
@@ -33,9 +30,12 @@ class TopSort:
 		return path
 	
 	def DFS(self, cur, path=[]):
+		print(cur.name,[i.name for i in path])
 		if cur in path:
 			return path
-		path.append(cur)
+		
 		for i in cur.neighbors:
 			if i not in path:
 				return self.DFS(i,path)
+		path.append(cur)
+		return path

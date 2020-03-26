@@ -1,13 +1,14 @@
 from DirectedGraph import DirectedGraph
 from TopSort import TopSort
 from Label import createLabel
-from random import sample,randrange,choice
+from random import sample,randrange,choice,shuffle
 
 def createRandomDAGIter(n):
 	g = DirectedGraph()
 	for i in range(1,n+1):
 		g.addNode(createLabel(i))
 	nodes = g.getAllNodes().copy()
+	shuffle(nodes)
 	total = len(nodes)
 	while len(nodes) > 0:
 		cur = nodes.pop(0)
@@ -31,8 +32,8 @@ def test():
 	print()
 	kahnsPath = ts.Kahns(g)
 	mDFSPath = ts.mDFS(g)
-	print()
+	print("Kahn's Algorithm:")
 	print([i.name for i in kahnsPath])
-	print()
+	print("mDFS Algorithm:")
 	print([i.name for i in mDFSPath])
 test()

@@ -23,19 +23,12 @@ class TopSort:
 	def mDFS(self, graph):
 		for i in graph.getAllNodes():
 			path = self.DFS(i)
-			'''if path:
-				print([i.name for i in path])
-			else:
-				print(path)'''
 		return path
 	
 	def DFS(self, cur, path=[]):
-		print(cur.name,[i.name for i in path])
-		if cur in path:
-			return path
-		
 		for i in cur.neighbors:
 			if i not in path:
-				return self.DFS(i,path)
-		path.append(cur)
+				self.DFS(i,path)
+		if cur not in path:
+			path.insert(0,cur)
 		return path

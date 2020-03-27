@@ -23,3 +23,4 @@
   + (a) 25 Nodes
   + (b) Adjacency lists of "touching" nodes
   + (c) Undirected, Acyclic, Connected, Unweighted
+  + (d) ![](docs/2d.png)

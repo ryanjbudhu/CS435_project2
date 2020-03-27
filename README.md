@@ -21,7 +21,4 @@
 
 #### 2. Boulevard of Broken Cheese
   + (a) 25 Nodes
-  + (b) Undirected
-		Acyclic
-		Connected
-		Unweighted
+  + (b) Undirected, Acyclic, Connected, Unweighted

@@ -1,6 +1,7 @@
 from WeightedGraph import WeightedGraph
 from Label import createLabel
 from random import randint
+from TreadmillMazeSolver import TreadmillMazeSolver
 
 def createRandomCompleteWeightedGraph(n):
 	g = WeightedGraph()
@@ -24,11 +25,15 @@ def createLinkedList(n):
 		nodes[i].neighbors[nodes[i+1]] = 1
 	return g
 
-#g = createRandomCompleteWeightedGraph(10)
-g = createLinkedList(10)
-nodes = g.getAllNodes()
-#exit()
-for i in nodes:
-	print(i.name)
-	for j in i.neighbors:
-		print('\t',j.name,':',i.neighbors[j])
+def printGraph(nodes):
+	for i in nodes:
+		print(i.name)
+		for j in i.neighbors:
+			print('\t',j.name,':',i.neighbors[j])
+
+g = createRandomCompleteWeightedGraph(10)
+ts = TreadmillMazeSolver()
+#printGraph(g.getAllNodes())
+path = ts.dijkstras(g.getAllNodes()[0])
+print([{i.name:path[i]} for i in path])
+#g = createLinkedList(10)

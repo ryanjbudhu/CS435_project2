@@ -31,10 +31,11 @@ def printGraph(nodes):
 		for j in i.neighbors:
 			print('\t',j.name,':',i.neighbors[j])
 
-g = createRandomCompleteWeightedGraph(10)
-ts = TreadmillMazeSolver()
-#printGraph(g.getAllNodes())
-path,old = ts.dijkstras(g.getAllNodes()[0])
-print('old:',[{i.name:old[i]} for i in old])
-print('new:',[{i.name:path[i]} for i in path])
-#g = createLinkedList(10)
+def test():
+	g = createRandomCompleteWeightedGraph(10)
+	ts = TreadmillMazeSolver()
+	#printGraph(g.getAllNodes())
+	path,old = ts.dijkstras(g.getAllNodes()[0])
+	print('old:',[{i.name:old[i]} for i in old])
+	print('new:',[{i.name:path[i]} for i in path])
+	#g = createLinkedList(10)

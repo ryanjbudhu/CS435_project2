@@ -19,4 +19,9 @@
 	```
   + (c) ![DFS > BFS](docs/1c.png)
 
-#### 2. 
+#### 2. Boulevard of Broken Cheese
+  + (a) 25 Nodes
+  + (b) Undirected
+		Acyclic
+		Connected
+		Unweighted

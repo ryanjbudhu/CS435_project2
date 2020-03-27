@@ -3,7 +3,7 @@
 
 #### 1. Gonna Take My Horse To The Old Town Node
   * (a) `S A C B E F G K L D`
-  * (b) ``S = [A]
+  * (b) ```S = [A]
 C = [A]
 A = [S, C, B, E]
 A = [A, E]
@@ -12,6 +12,6 @@ F = [E, G]
 G = [F, K]
 K = [G, L]
 L = [K, D]
-D = [L]``
+D = [L]```
 
 #### 2. 

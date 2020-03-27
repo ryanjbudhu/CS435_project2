@@ -23,4 +23,18 @@
   + (a) 25 Nodes
   + (b) Adjacency lists of "touching" nodes
   + (c) Undirected, Acyclic, Connected, Unweighted
-  + (d) ![](docs/2d.png)
+  + (d) ![Mouse Maze](docs/2d.png)
+
+#### 3. Traverse This Town
+  + (a) [`Graph.py`](TraversThisTown/Graph.py)
+  + (b) [`main.py`](TraversThisTown/main.py)
+  + (c) [`main.py`](TraversThisTown/main.py)
+  + (d) [`GraphSearch.py`](TraversThisTown/GraphSearch.py)
+  + (e) [`GraphSearch.py`](TraversThisTown/GraphSearch.py)
+  + (f) [`GraphSearch.py`](TraversThisTown/GraphSearch.py)
+  + (g) [`GraphSearch.py`](TraversThisTown/GraphSearch.py)
+  + (h) [`main.py`](TraversThisTown/main.py)
+    * i. I ran into a RecursionError: maximum recursion depth exceeded in comparison
+	     The code needs to run n recursions (where n is number of nodes in the graph) when it is a LinkedList.
+  + (i) [`main.py`](TraversThisTown/main.py)
+    * i. Since there are no recursive calls made, there is no reason for the callstack to be overflowed.

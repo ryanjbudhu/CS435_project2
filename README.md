@@ -5,16 +5,16 @@
   + (a) `S A C B E F G K L D`
   + (b) 
     ```
-    S = [A]
-	C = [A]
-	A = [S, C, B, E]
-	A = [A, E]
-	E = [B, A]
-	F = [E, G]
-	G = [F, K]
-	K = [G, L]
-	L = [K, D]
-	D = [L]
+    S.neighbors = [A]
+	C.neighbors = [A]
+	A.neighbors = [S, C, B, E]
+	B.neighbors = [A, E]
+	E.neighbors = [B, A]
+	F.neighbors = [E, G]
+	G.neighbors = [F, K]
+	K.neighbors = [G, L]
+	L.neighbors = [K, D]
+	D.neighbors = [L]
 	```
   + (c)  
   ![DFS > BFS](docs/1c.png)

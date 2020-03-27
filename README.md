@@ -34,7 +34,16 @@
   + (f) [`GraphSearch.py`](TraversThisTown/GraphSearch.py)
   + (g) [`GraphSearch.py`](TraversThisTown/GraphSearch.py)
   + (h) [`main.py`](TraversThisTown/main.py)
-    * i. I ran into a RecursionError: maximum recursion depth exceeded in comparison
+    * i. I ran into a `RecursionError: maximum recursion depth exceeded in comparison`.
 	     The code needs to run n recursions (where n is number of nodes in the graph) when it is a LinkedList.
   + (i) [`main.py`](TraversThisTown/main.py)
     * i. Since there are no recursive calls made, there is no reason for the callstack to be overflowed.
+
+#### 4. Thank U, Vertext
+  + (a) A DAG is a connected graph where at least one node has 0 incoming nodes and at least one node has 0 outgoing nodes. 
+        There are no cycles in a DAG. In the previous graph every connected node could traverse to and from each other.
+        In a DAG they only move in one direction.
+  + (b) [`DirectedGraph.py`](ThankUVertext/DirectedGraph.py)
+  + (c) [`main.py`](ThankUVertext/main.py)
+  + (d) [`TopSort.py`](ThankUVertext/TopSort.py)
+  + (e) [`TopSort.py`](ThankUVertext/TopSort.py)

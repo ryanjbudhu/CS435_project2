@@ -19,8 +19,8 @@ class Graph:
 	#This removes an undirected edge between first and second (and vice versa)
 	def removeUndirectedEdge(self, first, second):
 		try:
-			first.neighbors.remove(second.name)
-			second.neighbors.remove(first.name)
+			first.neighbors.remove(second)
+			second.neighbors.remove(first)
 		except:
 			return
 	

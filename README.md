@@ -3,7 +3,6 @@
 
 ### 1. Gonna Take My Horse To The Old Town Node
   + (a) `S A C B E F G K L D`
-
   + (b) 
     ```
     S = [A]

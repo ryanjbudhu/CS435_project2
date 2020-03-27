@@ -6,12 +6,16 @@ class TreadmillMazeSolver:
 		shortest = {start:0}
 		for i in start.neighbors:
 			shortest[i] = start.neighbors[i]
+		old = shortest.copy()
 		notvisited = [i for i in shortest]
 		notvisited.remove(start)
-		print([i.name for i in notvisited])
 		while notvisited:
 			cur = min(notvisited,key=lambda x:shortest[x])
-			print(cur.name)
 			notvisited.remove(cur)
+			print(cur.name)
+			for i in cur.neighbors:
+				suggested = shortest[cur] + cur.neighbors[i]
+				if shortest[i] > suggested:
+					shortest[i] = suggested
 		
-		return shortest
+		return shortest,old

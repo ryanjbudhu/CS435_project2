@@ -11,8 +11,6 @@ class WeightedGraph:
 	
 	#This adds an undirected weighted edge between first and second (but not vice versa)
 	def addDirectedEdge(self, first, second, weight):
-		if first in second.neighbors:
-			return
 		first.neighbors[second] = weight
 	
 	#This removes an undirected weighted edge between first and second (but not vice versa)

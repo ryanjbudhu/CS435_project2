@@ -17,13 +17,15 @@
 	L = [K, D]
 	D = [L]
 	```
-  + (c) ![DFS > BFS](docs/1c.png)
+  + (c)  
+  ![DFS > BFS](docs/1c.png)
 
 #### 2. Boulevard of Broken Cheese
   + (a) 25 Nodes
   + (b) Adjacency lists of "touching" nodes
   + (c) Undirected, Acyclic, Connected, Unweighted
-  + (d) ![Mouse Maze](docs/2d.png)
+  + (d)  
+  ![Mouse Maze](docs/2d.png)
 
 #### 3. Traverse This Town
   + (a) [`Graph.py`](TraversThisTown/Graph.py)

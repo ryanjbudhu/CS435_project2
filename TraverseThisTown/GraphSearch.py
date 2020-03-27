@@ -1,5 +1,3 @@
-from Graph import Graph
-
 class GraphSearch:
 	def __init__(self):
 		pass

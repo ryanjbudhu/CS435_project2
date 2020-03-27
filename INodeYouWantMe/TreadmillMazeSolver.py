@@ -12,7 +12,6 @@ class TreadmillMazeSolver:
 		while notvisited:
 			cur = min(notvisited,key=lambda x:shortest[x])
 			notvisited.remove(cur)
-			print(cur.name)
 			for i in cur.neighbors:
 				suggested = shortest[cur] + cur.neighbors[i]
 				if shortest[i] > suggested:

@@ -22,8 +22,9 @@ def createRandomDAGIter(n):
 		if len(nodes)<=1:
 			break
 			
-		# Choose a random amount of children
-		num = randrange(1,len(nodes))
+		# XXX Choose a random amount of children XXX
+		# Make nodes have 2 children
+		num = 2 # randrange(1,len(nodes))
 		
 		# Add a random sample of num length
 		# the neighbor of the cur
@@ -34,7 +35,7 @@ def createRandomDAGIter(n):
 			nodes.pop(nodes.index(n))
 			if len(nodes) <= 1:
 				break
-			num = randrange(1,len(nodes))
+			num = 2 # randrange(1,len(nodes))
 			for i in sample(nodes,num): g.addDirectedEdge(n, i)
 	return g
 

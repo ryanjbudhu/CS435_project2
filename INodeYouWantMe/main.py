@@ -17,29 +17,6 @@ def createRandomCompleteWeightedGraph(n):
 			randomWeight = randint(1, 15)
 			g.addDirectedEdge(i, j, randomWeight)
 	return g
-
-def createRandomWeightedBoxGraph(n):
-	g = WeightedGraph()
-	for i in range(1,n+1):
-		g.addNode(createLabel(i))
-	nodes = g.getAllNodes()
-	cols = floor(sqrt(len(nodes)))
-	rowcount = colcount = idx = 0
-	while idx < len(nodes):
-		nodes[idx].x = rowcount
-		nodes[idx].y = colcount
-		randomWeight = randint(1, 15)
-		if colcount == cols:
-			colcount = 0
-			rowcount += 1
-		if colcount > 0:
-			g.addDirectedEdge(nodes[idx-1], nodes[idx], randomWeight)
-		if idx > cols - 1:
-			g.addDirectedEdge(nodes[idx-cols], nodes[idx], randomWeight)
-		
-		colcount += 1
-		idx += 1
-	return g
 	
 
 def createLinkedList(n):
@@ -65,14 +42,3 @@ def test():
 	print('old:',[{i.name:old[i]} for i in old])
 	print('new:',[{i.name:path[i]} for i in path])
 	#g = createLinkedList(10)
-
-	newg = createRandomWeightedBoxGraph(25)
-	printGraph(newg.getAllNodes())
-
-'''
-A	B	C
-D	E	F
-G	H	I
-J	K	L
-M	N
-'''

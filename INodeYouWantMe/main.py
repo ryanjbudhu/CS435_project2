@@ -18,7 +18,7 @@ def createRandomCompleteWeightedGraph(n):
 			g.addDirectedEdge(i, j, randomWeight)
 	return g
 
-def createRandomCompleteWeightedBoxGraph(n):
+def createRandomWeightedBoxGraph(n):
 	g = WeightedGraph()
 	for i in range(1,n+1):
 		g.addNode(createLabel(i))
@@ -66,8 +66,8 @@ def test():
 	print('new:',[{i.name:path[i]} for i in path])
 	#g = createLinkedList(10)
 
-g = createRandomCompleteWeightedBoxGraph(25)
-printGraph(g.getAllNodes())
+	newg = createRandomWeightedBoxGraph(25)
+	printGraph(newg.getAllNodes())
 
 '''
 A	B	C

@@ -2,11 +2,8 @@ class WeightedGraph:
 	class Node:
 		def __init__(self, name):
 			self.name = name
-			self.neighbors = {}
-			self.x = 0
-			self.y = 0
 	def __init__(self):
-		self.nodes = []
+		self.nodes = [][]
 	
 	def addNode(self, nodeName):
 		self.nodes.append(self.Node(nodeName))

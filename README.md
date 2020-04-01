@@ -59,4 +59,7 @@
 ### 6. When You Wish Upon A*
   + (a) [`GridGraph.py`](WishUponA/GridGraph.py)
   + (b) [`main.py`](WishUponA/main.py)
-  + (c) The Manhattan Distance is an admissable and consistent heuristic because 
+  + (c) The Manhattan Distance is a heuristic that I can use to solve the maze with A*. It is consistent because it is always
+        less than estimated distance. Since the maze can only be solved by moving up, down, left, and right the diagonal
+        distance will always be shorter than the shortest possible path distance. By this definition it is also admissible
+        because it was also never overestimate the shortest distance.

@@ -55,3 +55,8 @@
   + (c) [`main.py`](INodeYouWantMe/main.py)
   + (d) [`main.py`](INodeYouWantMe/main.py)
   + (e) [`TreadmillMazeSolver.py`](INodeYouWantMe/TreadmillMazeSolver.py)
+  
+### 6. When You Wish Upon A*
+  + (a) [`GridGraph.py`](WishUponA/GridGraph.py)
+  + (b) [`main.py`](WishUponA/main.py)
+  + (c) The Manhattan Distance is an admissable and consistent heuristic because 

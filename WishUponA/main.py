@@ -26,6 +26,20 @@ def createRandomGridGraph(n):
 		idx += 1
 	return g
 
+
+def astar(start):
+	openList = {start:0}
+	closedList = []
+	
+	while openList:
+		q = min(openList, key=lambda x: openList[x])
+		cur = openList[q]
+		del openList[q]
+		print(q,':',cur)
+		closedList.append(q)
+	return closedList
+
+
 def printGrid(nodes, edges=False):
 	for x in nodes:
 		print([i.name for i in x])
@@ -43,7 +57,6 @@ def testGrid(showN=False):
 	nodes = g.getAllNodes()
 	sourceNode = nodes[0][0]
 	destNode = nodes[n-1][n-1]
-	print(sourceNode.name,destNode.name)
 	printGrid(nodes,showN)
 testGrid(False)
 

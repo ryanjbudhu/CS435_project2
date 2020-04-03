@@ -18,29 +18,42 @@ def createRandomGridGraph(n):
 		g.addGridNode(x, y, createLabel(idx)) # Insert a node at (x,y)
 		nodes = g.getAllNodes() # Get the updated node grid
 		if colcount > 0: # If its not the leftmost node in grid
-			if randint(0, 2):
+			if randint(0, 2): # 2/3 chance of creating a node, 50% was too little
 				g.addUndirectedEdge(nodes[x][y-1], nodes[x][y])
 		if idx > cols: # If its not the first row
-			if randint(0, 2):
+			if randint(0, 2): # 2/3 chance of creating a node, 50% was too little
 				g.addUndirectedEdge(nodes[x-1][y], nodes[x][y])
 		colcount += 1
 	return g
 
 
 def astar(start, end):
-	openList = {start:0} # Queue of nodes yet to finalize
+	start.g = start.h = start.f = 0
+	openList = [start] # Queue of nodes yet to finalize
 	closedList = [] # Nodes its seen, "finalized"
-	while openList and end not in closedList:
-		q = min(openList, key=lambda x: openList[x]) # Pick node with lowest H
-		cur = openList[q]
-		del openList[q] # remove it from the dict
-		for n in q.neighbors: # add the neighbors to open if not finalized
-			if (n not in closedList):
-				openList[n] = abs(n.x - end.x) + abs(n.y - end.y)
-		closedList.append(q) # finalize
-	if closedList[-1]!=end: # if end isn't the last node we didn't find it
-		return []
-	return closedList
+	while openList:
+		cur = min(openList, key=lambda x: x.f) # Pick node with lowest f
+		openList.remove(cur) # Remove it from the open list
+		closedList.append(cur) # finalize current
+		if cur == end: # If the current node is the target node
+			path = []
+			current = cur
+			while current is not None:
+				path.insert(0,current)
+				current = current.parent
+			return path,len(closedList)
+		for child in cur.neighbors: # add the neighbors to open if not finalized
+			if child in closedList:
+				continue
+			child.g = cur.g+1
+			child.h = abs(child.x - end.x) + abs(child.y - end.y)
+			child.f = child.g + child.h
+			child.parent = cur
+			for node in openList:
+				if child == node and child.g > node.g:
+					continue
+			openList.append(child)
+	return [],len(closedList) # if end isn't found
 
 
 def printGrid(nodes, edges=False):
@@ -61,8 +74,9 @@ def testGrid(showN=False):
 	sourceNode = nodes[0][0]
 	destNode = nodes[n-1][n-1]
 #	printGrid(nodes,showN)
-	order = astar(sourceNode, destNode)
-	print([i.name for i in order])
-	print("Length:",len(order))
+	path,visited = astar(sourceNode, destNode)
+	print([i.name for i in path])
+	print()
+	print("Nodes visited:",visited)
 	
 testGrid(False)

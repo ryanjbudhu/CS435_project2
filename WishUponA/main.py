@@ -68,7 +68,7 @@ def printGrid(nodes, edges=False):
 					print('\t',y.name, ':', edge.name)
 
 def testGrid(showN=False):
-	n = 100
+	n = 15
 	g = createRandomGridGraph(n)
 	nodes = g.getAllNodes()
 	sourceNode = nodes[0][0]

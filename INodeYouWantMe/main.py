@@ -34,10 +34,12 @@ def printGraph(nodes):
 			
 
 def test():
-	g = createRandomCompleteWeightedGraph(10)
+	g = createRandomCompleteWeightedGraph(1000)
 	ts = TreadmillMazeSolver()
 	#printGraph(g.getAllNodes())
 	path,old = ts.dijkstras(g.getAllNodes()[0])
-	print('old:',[{i.name:old[i]} for i in old])
+#	print('old:',[{i.name:old[i]} for i in old])
 	print('new:',[{i.name:path[i]} for i in path])
+	print("Length:", len(path))
 	#g = createLinkedList(10)
+test()

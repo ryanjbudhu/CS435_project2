@@ -63,5 +63,6 @@ def testGrid(showN=False):
 #	printGrid(nodes,showN)
 	order = astar(sourceNode, destNode)
 	print([i.name for i in order])
+	print("Length:",len(order))
 	
 testGrid(False)

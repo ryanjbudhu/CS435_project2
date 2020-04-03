@@ -2,8 +2,12 @@ class GridGraph:
 	class Node:
 		def __init__(self, name, x=0, y=0):
 			self.name = name
+			self.parent = None
 			self.x = x
 			self.y = y
+			self.g = 0
+			self.h = 0
+			self.f = 0
 			self.neighbors = []
 	def __init__(self):
 		self.nodes = []

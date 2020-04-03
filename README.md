@@ -63,3 +63,10 @@
         less than estimated distance. Since the maze can only be solved by moving up, down, left, and right the diagonal
         distance will always be shorter than the shortest possible path distance. By this definition it is also admissible
         because it was also never overestimate the shortest distance.
+  + (d) [`main.py`](WishUponA/main.py)
+  + (e) [`main.py`](WishUponA/main.py)
+
+### 7. Edgextra Credit
+  + (a) In a graph with 1000 nodes, the A* algorithm only visits 370 nodes, while the Dijkstra algorithm visits all 1000.
+        The A* algorithm only visits nodes that are the highest chance of being part of the shortest path, while the Dijkstra
+        algorithm visits all the nodes it can before reaching the destination node to compare its results and create the shortest path.

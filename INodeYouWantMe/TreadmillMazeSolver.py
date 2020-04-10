@@ -10,6 +10,7 @@ class TreadmillMazeSolver:
 		notvisited = [i for i in shortest]
 		notvisited.remove(start)
 		while notvisited:
+			# Get smallest node in shortest[] that is also in notvisited
 			cur = min(notvisited,key=lambda x:shortest[x])
 			notvisited.remove(cur)
 			for i in cur.neighbors:

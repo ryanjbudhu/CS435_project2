@@ -9,6 +9,7 @@ class TopSort:
 			for n in i.neighbors:
 				in_degree[n.name] += 1
 		queue = []
+		# Create a list of nodes where their in degree is 0
 		queue = list(filter(lambda i: in_degree[i.name]==0, nodes))
 		output = []
 		while queue:

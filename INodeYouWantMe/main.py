@@ -10,8 +10,9 @@ def createRandomCompleteWeightedGraph(n):
 	nodes = g.getAllNodes()
 	for i in nodes:
 		x = nodes.index(i)
-		suggested = nodes[:x]+nodes[x+1:]
-		for j in suggested:
+		# Make a list including all values but the current
+		suggestedList = nodes[:x]+nodes[x+1:]
+		for j in suggestedList:
 			randomWeight = randint(1, 15)
 			g.addDirectedEdge(i, j, randomWeight)
 	return g

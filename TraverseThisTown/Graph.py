@@ -2,7 +2,7 @@ class Graph:
 	class Node:
 		def __init__(self, name):
 			self.name = name
-			self.neighbors = []
+			self.neighbors = set()
 	def __init__(self):
 		self.nodes = []
 	
@@ -11,18 +11,13 @@ class Graph:
 	
 	#This adds an undirected edge between first and second (and vice versa)
 	def addUndirectedEdge(self, first, second):
-		if first in second.neighbors or second in first.neighbors:
-			return
-		first.neighbors.append(second)
-		second.neighbors.append(first)
+		first.neighbors.add(second)
+		second.neighbors.add(first)
 	
 	#This removes an undirected edge between first and second (and vice versa)
 	def removeUndirectedEdge(self, first, second):
-		try:
-			first.neighbors.remove(second)
-			second.neighbors.remove(first)
-		except:
-			return
+		first.neighbors.discard(second)
+		second.neighbors.discard(first)
 	
 	#This returns all the nodes in the graph
 	def getAllNodes(self):

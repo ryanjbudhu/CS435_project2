@@ -28,11 +28,11 @@ def createRandomGridGraph(n):
 
 
 def astar(start, end):
-	start.g = start.h = start.f = 0
+	start.g = start.h = start.value = 0
 	openList = [start] # Queue of nodes yet to finalize
 	closedList = [] # Nodes its seen, "finalized"
 	while openList:
-		cur = min(openList, key=lambda x: x.f) # Pick node with lowest f
+		cur = min(openList, key=lambda x: x.value) # Pick node with lowest f
 		openList.remove(cur) # Remove it from the open list
 		closedList.append(cur) # finalize current
 		if cur == end: # If the current node is the target node
@@ -47,7 +47,7 @@ def astar(start, end):
 				continue
 			child.g = cur.g+1
 			child.h = abs(child.x - end.x) + abs(child.y - end.y)
-			child.f = child.g + child.h
+			child.value = child.g + child.h
 			child.parent = cur
 			for node in openList:
 				if child == node and child.g > node.g:

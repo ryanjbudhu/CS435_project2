@@ -7,7 +7,7 @@ class GridGraph:
 			self.y = y
 			self.g = 0
 			self.h = 0
-			self.f = 0
+			self.value = 0
 			self.neighbors = []
 	def __init__(self):
 		self.nodes = []
